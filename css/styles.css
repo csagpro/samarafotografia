@@ -41,13 +41,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* previne scroll horizontal global */
 }
 
 body {
   font-family: var(--font-body);
+  font-size: 16px;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.75;
   font-weight: 300;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -179,17 +181,20 @@ address { font-style: normal; }
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  padding: 1.25rem 0;
-  transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
+  z-index: 9999; /* garante acima de qualquer seção */
+  padding: 1rem 0;
+  background: rgba(250, 248, 245, 0.7); /* levemente visível desde o início */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background var(--transition), padding var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
 }
 
 .header.scrolled {
-  background: rgba(250, 248, 245, 0.94);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  padding: 0.75rem 0;
-  box-shadow: 0 1px 24px rgba(44, 32, 24, 0.06);
+  background: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.6rem 0;
+  box-shadow: 0 1px 24px rgba(44, 32, 24, 0.07);
 }
 
 .header-inner {
@@ -205,8 +210,10 @@ address { font-style: normal; }
 .logo { flex-shrink: 0; }
 
 .logo-img {
-  height: 44px;
+  height: 40px;
   width: auto;
+  max-width: 160px;
+  object-fit: contain;
 }
 
 .logo-text {
@@ -501,8 +508,8 @@ address { font-style: normal; }
 }
 
 .sobre-body p {
-  margin-bottom: 1.2rem;
-  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
   color: var(--text);
   line-height: 1.85;
 }
@@ -542,7 +549,7 @@ address { font-style: normal; }
   gap: 1px;
   background: rgba(196, 168, 130, 0.1);
   position: relative;
-  z-index: 1;
+  /* sem z-index: evita criar stacking context que compete com o header fixo */
 }
 
 .numero-item {
@@ -727,9 +734,9 @@ address { font-style: normal; }
 
 .depo-text {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-style: italic;
-  line-height: 1.7;
+  line-height: 1.72;
   color: var(--text);
   margin-bottom: 2rem;
   position: relative;
