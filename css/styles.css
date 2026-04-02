@@ -482,7 +482,7 @@ address { font-style: normal; }
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: center top;
+  object-position: left top;
   display: block;
   border: 1px solid var(--gold-light);
 }
@@ -701,7 +701,7 @@ address { font-style: normal; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .depoimento-card {
