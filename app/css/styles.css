@@ -1,0 +1,325 @@
+/* ================================================
+   SAMARA FOTOGRAFIA — APP PAGE
+   Squeeze page para agenda de retorno Julho 2026
+   Estética: idêntica ao site principal
+================================================ */
+
+/* ---- DESIGN TOKENS ---- */
+:root {
+  --bg:           #FAF8F5;
+  --cream:        #F2EBE0;
+  --cream-mid:    #EAD9C8;
+  --gold:         #C4A882;
+  --gold-light:   #E8D9C8;
+  --gold-dark:    #9E7E5A;
+  --dark:         #2C2018;
+  --dark-soft:    #3D3028;
+  --text:         #4A3E35;
+  --muted:        #9B8E85;
+  --white:        #FFFFFF;
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:    'Jost', system-ui, -apple-system, sans-serif;
+
+  --ease:       cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition: 0.4s var(--ease);
+
+  --shadow-sm:  0 2px 12px rgba(44, 32, 24, 0.06);
+  --shadow-md:  0 8px 32px rgba(44, 32, 24, 0.10);
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ---- LAYOUT ---- */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- BACKGROUND SHAPES ---- */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-shape-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 217, 200, 0.5) 0%, transparent 65%);
+  top: -200px;
+  right: -180px;
+  animation: floatA 14s ease-in-out infinite;
+}
+
+.bg-shape-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(222, 200, 176, 0.35) 0%, transparent 65%);
+  bottom: -150px;
+  left: -130px;
+  animation: floatB 18s ease-in-out infinite;
+}
+
+@keyframes floatA {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(-25px, 20px); }
+}
+@keyframes floatB {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(20px, -18px); }
+}
+
+/* ---- HEADER ---- */
+.site-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.1s forwards;
+}
+
+.site-logo {
+  height: 48px;
+  width: auto;
+  max-width: 180px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.site-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+/* ---- MAIN CONTENT ---- */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 620px;
+  width: 100%;
+}
+
+/* eyebrow */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.25s forwards;
+}
+
+/* headline */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 300;
+  line-height: 1.12;
+  color: var(--dark);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.4s forwards;
+}
+
+.headline em {
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+/* subhead */
+.subhead {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.55s forwards;
+}
+
+/* ---- URGENCY BLOCK ---- */
+.urgency-block {
+  background: var(--cream);
+  border: 1px solid var(--gold-light);
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.7s forwards;
+}
+
+.urgency-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  margin-bottom: 0.875rem;
+}
+
+.urgency-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.urgency-date p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.urgency-date strong {
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.urgency-note {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+/* ---- CTA BUTTON ---- */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1.125rem 2.5rem;
+  background: #25D366;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.85s forwards;
+  width: 100%;
+  max-width: 400px;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe59;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-whatsapp svg {
+  flex-shrink: 0;
+}
+
+/* cta note */
+.cta-note {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 1s forwards;
+}
+
+/* ---- DIVIDER ---- */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 2rem auto;
+  opacity: 0;
+  animation: fadeIn 0.9s var(--ease) 1.1s forwards;
+}
+
+/* ---- FOOTER ---- */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: fadeIn 1s var(--ease) 1.2s forwards;
+}
+
+.site-footer a {
+  color: var(--gold-dark);
+  transition: color var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.site-footer a:hover {
+  color: var(--dark);
+  border-bottom-color: var(--gold-light);
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 480px) {
+  .page-wrapper { padding: 2rem 1.25rem 1.5rem; }
+
+  .site-logo { height: 38px; max-width: 150px; }
+
+  .urgency-block { padding: 1.5rem 1.25rem; }
+
+  .urgency-date { flex-direction: column; gap: 0.5rem; }
+
+  .btn-whatsapp {
+    font-size: 0.78rem;
+    padding: 1rem 1.5rem;
+  }
+}
