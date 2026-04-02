@@ -482,7 +482,7 @@ address { font-style: normal; }
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: left top;
+  object-position: center top;
   display: block;
   border: 1px solid var(--gold-light);
 }
