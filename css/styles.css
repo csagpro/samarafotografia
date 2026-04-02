@@ -1086,6 +1086,10 @@ address { font-style: normal; }
     margin: 0 auto;
   }
 
+  .sobre-text { text-align: center; }
+
+  .sobre-text .btn { display: block; width: fit-content; margin: 0 auto; }
+
   /* NÚMEROS */
   .numeros-grid { grid-template-columns: 1fr; }
   .numero-item { padding: 2.25rem 1.5rem; }
@@ -1177,4 +1181,10 @@ address { font-style: normal; }
 
   .depoimento-card { padding: 2rem 1.75rem; }
   .depo-text { font-size: 0.98rem; }
+
+  .galeria-cta .btn {
+    white-space: normal;
+    text-align: center;
+    max-width: 280px;
+  }
 }
