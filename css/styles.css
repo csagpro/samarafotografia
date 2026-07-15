@@ -705,6 +705,8 @@ address { font-style: normal; }
 }
 
 .depoimento-card {
+  display: flex;
+  flex-direction: column;
   background: var(--white);
   padding: 2.5rem 2.25rem;
   border: 1px solid var(--gold-light);
@@ -758,6 +760,7 @@ address { font-style: normal; }
   display: flex;
   align-items: center;
   gap: 0.875rem;
+  margin-top: auto;
   border-top: 1px solid var(--gold-light);
   padding-top: 1.25rem;
 }
@@ -999,6 +1002,15 @@ address { font-style: normal; }
   font-size: 0.78rem;
   color: rgba(250, 248, 245, 0.25);
   letter-spacing: 0.05em;
+}
+
+.footer-credit a {
+  color: rgba(250, 248, 245, 0.5);
+  transition: color var(--transition);
+}
+
+.footer-credit a:hover {
+  color: var(--gold-light);
 }
 
 /* ===============================================
