@@ -61,7 +61,7 @@ Edite os textos diretamente em `index.html`.
 
 ## Integrações Externas
 
-- **Orçamento**: [app.samarafotografia.com.br](https://app.samarafotografia.com.br)
+- **Orçamento**: [WhatsApp +595 991 859 150](https://wa.me/595991859150)
 - **Portfolio**: [@samara_rodrigo_photo](https://instagram.com/samara_rodrigo_photo)
 
 ## Licença
