@@ -47,7 +47,7 @@ Site de página única (`index.html`) com seções: hero, sobre, galeria/portfó
 
 ## Integrações Externas
 
-- **Orçamento**: `https://app.samarafotografia.com.br` (link externo, sem integração de backend)
+- **Orçamento**: `https://wa.me/595991859150` (WhatsApp direto, sem integração de backend)
 - **Instagram/Portfólio**: `@samara_rodrigo_photo`
 - **Logo**: carregada de `samarafotografia.com.br` com fallback para texto se falhar
 - **Fontes**: Google Fonts (Cormorant Garamond + Jost)
