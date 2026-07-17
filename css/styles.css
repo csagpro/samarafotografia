@@ -1114,6 +1114,11 @@ address { font-style: normal; }
   border: 1px solid var(--gold-light);
 }
 
+.location-story-image--portrait img {
+  aspect-ratio: 3 / 4;
+  object-position: center;
+}
+
 .location-story-copy p {
   margin-bottom: 1.25rem;
   line-height: 1.9;
