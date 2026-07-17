@@ -444,6 +444,107 @@ address { font-style: normal; }
 }
 
 /* ===============================================
+   ONDE ATENDEMOS
+=============================================== */
+.locations {
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  background: var(--cream);
+}
+
+.locations-header {
+  max-width: 660px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.locations-header .section-title { margin-bottom: 1rem; }
+
+.locations-header > p:last-child {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.location-card {
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(2rem, 4vw, 3.25rem);
+  background: var(--white);
+  border: 1px solid var(--gold-light);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.location-card::after {
+  content: '';
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(196, 168, 130, 0.2);
+  border-radius: 50%;
+  right: -80px;
+  top: -85px;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+
+.location-card-kicker {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1.25rem;
+}
+
+.location-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--dark);
+  margin-bottom: 1.25rem;
+}
+
+.location-card p {
+  max-width: 440px;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+.location-card-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--gold-dark);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.location-card-link:hover {
+  gap: 1rem;
+  color: var(--dark);
+}
+
+/* ===============================================
    SOBRE
 =============================================== */
 .sobre {
@@ -874,6 +975,209 @@ address { font-style: normal; }
 }
 
 /* ===============================================
+   PÁGINAS DE LOCALIZAÇÃO
+=============================================== */
+.location-page .header {
+  background: rgba(250, 248, 245, 0.92);
+}
+
+.location-hero {
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  padding: 8.5rem 0 5rem;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.location-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.75fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.location-hero-copy .section-eyebrow { margin-bottom: 1.5rem; }
+
+.location-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6.2vw, 5.2rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.location-hero-title em {
+  color: var(--gold-dark);
+  font-weight: 300;
+}
+
+.location-hero-copy > p:not(.section-eyebrow) {
+  max-width: 610px;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 2.25rem;
+}
+
+.location-hero-image {
+  position: relative;
+}
+
+.location-hero-image::before {
+  content: '';
+  position: absolute;
+  inset: 1.5rem -1.5rem -1.5rem 1.5rem;
+  border: 1px solid var(--gold-light);
+}
+
+.location-hero-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  position: relative;
+  border: 1px solid var(--gold-light);
+}
+
+.location-details {
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  background: var(--cream);
+}
+
+.location-section-header {
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.location-section-header .section-title { margin-bottom: 1rem; }
+
+.location-section-header > p:last-child {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.location-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--gold-light);
+  border: 1px solid var(--gold-light);
+}
+
+.feature-card {
+  background: var(--white);
+  padding: clamp(2rem, 4vw, 3rem);
+}
+
+.feature-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-bottom: 2rem;
+}
+
+.feature-card h2,
+.feature-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.location-story {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+}
+
+.location-story-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.location-story-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--gold-light);
+}
+
+.location-story-copy p {
+  margin-bottom: 1.25rem;
+  line-height: 1.9;
+}
+
+.location-story-copy p:last-of-type { margin-bottom: 2rem; }
+
+.location-faq {
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  background: var(--cream);
+}
+
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  border-top: 1px solid var(--gold-light);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--gold-light);
+  padding: 1.4rem 0;
+}
+
+.faq-list summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--dark);
+}
+
+.faq-list summary::-webkit-details-marker { display: none; }
+
+.faq-list summary::after {
+  content: '+';
+  color: var(--gold-dark);
+  flex-shrink: 0;
+}
+
+.faq-list details[open] summary::after { content: '−'; }
+
+.faq-list details p {
+  padding-top: 1rem;
+  max-width: 720px;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+
+.location-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--gold-dark);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+/* ===============================================
    FOOTER
 =============================================== */
 .footer {
@@ -1034,6 +1338,12 @@ address { font-style: normal; }
    RESPONSIVE — 1024px
 =============================================== */
 @media (max-width: 1024px) {
+  .nav { gap: 1.25rem; }
+
+  .nav-link { font-size: 0.68rem; }
+
+  .nav-cta { padding-inline: 1rem; }
+
   .depoimentos-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1088,6 +1398,38 @@ address { font-style: normal; }
   .nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(4.5px, -4.5px);
   }
+
+  /* LOCAIS */
+  .locations-grid,
+  .location-hero-grid,
+  .location-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-card { min-height: 280px; }
+
+  .location-hero {
+    min-height: auto;
+    padding-top: 8rem;
+  }
+
+  .location-hero-copy { text-align: center; }
+
+  .location-hero-copy .btn { justify-content: center; }
+
+  .location-hero-image {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .location-features { grid-template-columns: 1fr; }
+
+  .location-story-image {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .location-story-copy { text-align: center; }
 
   /* SOBRE */
   .sobre-grid { grid-template-columns: 1fr; }
@@ -1172,6 +1514,19 @@ address { font-style: normal; }
   }
 
   .hero-actions .btn { justify-content: center; }
+
+  .location-card { padding: 2rem 1.5rem; }
+
+  .location-hero-title { font-size: clamp(2.7rem, 14vw, 3.5rem); }
+
+  .location-hero-image::before {
+    inset: 0.75rem -0.75rem -0.75rem 0.75rem;
+  }
+
+  .faq-list summary {
+    gap: 1rem;
+    font-size: 1.2rem;
+  }
 
   .galeria-grid {
     grid-template-columns: 1fr;
